@@ -1,0 +1,23 @@
+  <h2>Apex Data</h2>
+  <div >
+    <table class="table ">
+      <tr>
+        <th>ID</th>
+        <th>Year Built</th>
+        <th>Monthly Price</th>
+        <th>Monthly Rent</th>
+        <th>Address</th>
+        <th>Action</th>
+      </tr>
+      <tr *ngFor='let sample of sampleContent'>
+        <td>{{sample?.id}}</td>
+        <td>{{sample.physicalData?.yearBuilt}}</td>
+        <td>{{sample.financialData?.listPrice}}</td>
+        <td>{{sample.financialData?.monthlyRent}}</td>
+        <td>{{sample.address.address1}}, {{sample.address.city}}, {{sample.address.county}}, {{sample.address.state}} {{sample.address.zip}}</td>
+        <td><button (click)="SaveRecord()">Save</button> </td>
+      </tr>
+    </table>
+  </div>
+
+<router-outlet></router-outlet>
